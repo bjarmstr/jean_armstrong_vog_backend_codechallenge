@@ -33,7 +33,20 @@ namespace VogCodeChallenge.API.Restful.Controllers
             return response;
         }
 
+        /// <summary>
+        /// List of all Employees in a Department
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("department/{departmentId}")]
+        [MapToApiVersion("1.0")]
+        public ActionResult<List<EmployeeResponse_v1_0>> GetEmployeesInDepartment([FromRoute] Guid departmentId)
+        {
 
+            var results = _employeeService.GetEmployeesInDepartment(departmentId);
+            var response = results.Select(emp => new EmployeeResponse_v1_0(emp)).ToList();
+
+            return response;
+        }
 
 
     }

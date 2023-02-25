@@ -15,5 +15,7 @@ namespace VogCodeChallenge.API.Application.IServices
         IList<Employee> ListAll();
 
         IEnumerable<EmployeeDTO> GetAllEmployees();
+
+        IEnumerable<EmployeeDTO> GetEmployeesInDepartment(Guid departmentId);
     }
 }

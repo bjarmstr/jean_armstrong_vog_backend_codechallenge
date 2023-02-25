@@ -18,7 +18,7 @@ namespace VogCodeChallenge.API.Infrastructure.Services
             },
             new Department{ Id = new Guid("dbbad7e3-13c9-45ce-9ab0-d3c39ba032d8"),
                             Name = "Sales",
-                            Address = "Suite 133"
+                            Address = "Suite 135"
             },
         };
 
@@ -48,7 +48,7 @@ namespace VogCodeChallenge.API.Infrastructure.Services
                           LastName = "Rock",
                           Address = "123 Downing St",
                           JobTitle = "Sales manager",
-                          DepartmentId = new Guid("40ade766-7b85-472d-a3ff-3964109d3d54")
+                          DepartmentId = new Guid("dbbad7e3-13c9-45ce-9ab0-d3c39ba032d8")
             },
         };
 
@@ -65,11 +65,28 @@ namespace VogCodeChallenge.API.Infrastructure.Services
             return Employees;
         }
 
+        /// <summary>
+        /// Gets all Employees
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<EmployeeDTO> GetAllEmployees()
         {
 
             var response = Employees.Select(emp => new EmployeeDTO(emp)).ToList();
 
+            return response;
+        }
+
+        /// <summary>
+        /// Gets all Employees in a given deparment
+        /// </summary>
+        /// <param name="departmentId"></param>
+        /// <returns></returns>
+        public IEnumerable<EmployeeDTO> GetEmployeesInDepartment(Guid departmentId)
+        {
+
+            var response = Employees.Where(emp => emp.DepartmentId == departmentId)
+                                    .Select(emp => new EmployeeDTO(emp)).ToList();
             return response;
         }
 
