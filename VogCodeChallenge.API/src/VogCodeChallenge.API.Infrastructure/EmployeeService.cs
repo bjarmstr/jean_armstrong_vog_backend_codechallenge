@@ -24,7 +24,7 @@ namespace VogCodeChallenge.API.Infrastructure
         /// <summary>
         /// temporary test data for Employees
         /// </summary>
-        private static readonly List<Employee> employees = new List<Employee>
+        private static readonly List<Employee> Employees = new List<Employee>
         {
             new Employee{ Id = Guid.NewGuid(),
                           FirstName = "Jay",
@@ -55,13 +55,13 @@ namespace VogCodeChallenge.API.Infrastructure
         public IEnumerable<Employee> GetAll()
         {
 
-            return employees;
+            return Employees;
         }
 
         public IList<Employee> ListAll()
         {
 
-            return employees;
+            return Employees;
         }
 
 

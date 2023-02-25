@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using VogCodeChallenge.API.Application.IServices;
 using VogCodeChallenge.API.Domain.Entity;
+using VogCodeChallenge.API.Restful.ViewModels.Employee.v1_0.Response;
 
 namespace VogCodeChallenge.API.Restful.Controllers
 {
@@ -23,21 +24,16 @@ namespace VogCodeChallenge.API.Restful.Controllers
         /// <returns></returns>
         [HttpGet("")]
         [MapToApiVersion("1.0")]
-        public IEnumerable<Employee> GetEmployees()
+        public ActionResult<List<EmployeeResponse_v1_0>> GetEmployees()
         {
            
-                var myvar = _employeeService.GetAll();
-         
-            return myvar;
+            var results = _employeeService.GetAll();
+            var response = results.Select(emp => new EmployeeResponse_v1_0(emp)).ToList();
+
+            return response;
         }
 
 
-        [HttpGet("/department/{departmentId}")]
-        [MapToApiVersion("2.0")]
-        public IList<Employee> ListEmployees()
-        {
-            var myvar = _employeeService.ListAll();
-            return myvar;
-        }
+       
     }
 }
