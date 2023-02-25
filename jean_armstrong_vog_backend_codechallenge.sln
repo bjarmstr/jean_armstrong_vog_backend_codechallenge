@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VogCodeChallenge.API", "VogCodeChallenge.API", "{B3DB3E9C-ADFC-4627-B471-D8DA3A70A47A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.API.Restful", "VogCodeChallenge.API\src\VogCodeChallenge.API\VogCodeChallenge.API.Restful.csproj", "{6D0FCA7D-B465-4B79-8CC7-EB70A580E570}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.API.Restful", "VogCodeChallenge.API\src\VogCodeChallenge.API.Restful\VogCodeChallenge.API.Restful.csproj", "{6D0FCA7D-B465-4B79-8CC7-EB70A580E570}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.API.Application", "VogCodeChallenge.API\src\VogCodeChallenge.API.Application\VogCodeChallenge.API.Application.csproj", "{428E8FDA-0756-4031-ABB5-7DC86DA6548B}"
 EndProject
