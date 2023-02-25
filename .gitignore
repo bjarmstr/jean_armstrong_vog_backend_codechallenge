@@ -361,3 +361,26 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+
+#
+## docker compose
+##
+docker-compose.override.yml
+
+#
+## AWS SDK
+##
+.aws
+
+
+# ignore local app settings
+appsettings.Development.json
+
+# ignore local dev settings
+appsettings.Local.json
+
+#
+## User Files
+##
+*/**/.suo
