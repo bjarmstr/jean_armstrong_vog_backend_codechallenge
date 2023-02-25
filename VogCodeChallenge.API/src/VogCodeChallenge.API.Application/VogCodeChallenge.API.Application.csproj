@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VogCodeChallenge.API.Domain\VogCodeChallenge.API.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
