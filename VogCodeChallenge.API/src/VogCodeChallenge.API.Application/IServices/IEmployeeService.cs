@@ -10,5 +10,7 @@ namespace VogCodeChallenge.API.Application.IServices
     public interface IEmployeeService
     {
         IEnumerable<Employee> GetAll();
+
+        IList<Employee> ListAll();
     }
 }

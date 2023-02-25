@@ -5,6 +5,10 @@ namespace VogCodeChallenge.API.Infrastructure
 {
     public class EmployeeService : IEmployeeService
     {
+
+        /// <summary>
+        /// temporary test data for Departments
+        /// </summary>
         private static readonly List<Department> Departments = new List<Department>
         {
             new Department{ Id = new Guid("8f02afbd-da06-4271-b239-f716780f59c6"),
@@ -17,7 +21,9 @@ namespace VogCodeChallenge.API.Infrastructure
             },
         };
 
-
+        /// <summary>
+        /// temporary test data for Employees
+        /// </summary>
         private static readonly List<Employee> employees = new List<Employee>
         {
             new Employee{ Id = Guid.NewGuid(),
@@ -29,16 +35,30 @@ namespace VogCodeChallenge.API.Infrastructure
             },
 
             new Employee{ Id = Guid.NewGuid(),
-                          FirstName = "Jay",
-                          LastName = "Armstrong",
+                          FirstName = "Dax",
+                          LastName = "Jones",
                           Address = "123 Corning St",
                           JobTitle = "Sales manager",
                           DepartmentId = new Guid("dbbad7e3-13c9-45ce-9ab0-d3c39ba032d8")
+            },
+
+              new Employee{ Id = Guid.NewGuid(),
+                          FirstName = "Jay",
+                          LastName = "Rock",
+                          Address = "123 Downing St",
+                          JobTitle = "Sales manager",
+                          DepartmentId = new Guid("40ade766-7b85-472d-a3ff-3964109d3d54")
             },
         };
 
 
         public IEnumerable<Employee> GetAll()
+        {
+
+            return employees;
+        }
+
+        public IList<Employee> ListAll()
         {
 
             return employees;
