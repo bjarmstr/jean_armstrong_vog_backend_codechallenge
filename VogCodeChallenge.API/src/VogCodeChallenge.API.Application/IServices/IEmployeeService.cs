@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VogCodeChallenge.API.Application.DTOs.Employees;
 using VogCodeChallenge.API.Domain.Entity;
 
 namespace VogCodeChallenge.API.Application.IServices
@@ -12,5 +13,7 @@ namespace VogCodeChallenge.API.Application.IServices
         IEnumerable<Employee> GetAll();
 
         IList<Employee> ListAll();
+
+        IEnumerable<EmployeeDTO> GetAllEmployees();
     }
 }

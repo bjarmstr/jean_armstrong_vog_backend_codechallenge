@@ -1,7 +1,8 @@
-﻿using VogCodeChallenge.API.Application.IServices;
+﻿using VogCodeChallenge.API.Application.DTOs.Employees;
+using VogCodeChallenge.API.Application.IServices;
 using VogCodeChallenge.API.Domain.Entity;
 
-namespace VogCodeChallenge.API.Infrastructure
+namespace VogCodeChallenge.API.Infrastructure.Services
 {
     public class EmployeeService : IEmployeeService
     {
@@ -62,6 +63,14 @@ namespace VogCodeChallenge.API.Infrastructure
         {
 
             return Employees;
+        }
+
+        public IEnumerable<EmployeeDTO> GetAllEmployees()
+        {
+
+            var response = Employees.Select(emp => new EmployeeDTO(emp)).ToList();
+
+            return response;
         }
 
 

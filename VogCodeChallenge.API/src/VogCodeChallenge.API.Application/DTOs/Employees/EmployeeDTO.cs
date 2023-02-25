@@ -1,21 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations;
-using VogCodeChallenge.API.Application.DTOs.Employees;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace VogCodeChallenge.API.Restful.ViewModels.Employee.v1_0.Response
+namespace VogCodeChallenge.API.Application.DTOs.Employees
 {
-    public class EmployeeResponse_v1_0
+    public class EmployeeDTO
     {
+        public EmployeeDTO() { }
 
-        public EmployeeResponse_v1_0() { }
-
-        public EmployeeResponse_v1_0(EmployeeDTO src)
+        public EmployeeDTO(Domain.Entity.Employee src)
         {
             Id = src.Id;
-            FirstName= src.FirstName;
-            LastName= src.LastName;
-            JobTitle= src.JobTitle;
-            Address= src.Address;
-            DepartmentId= src.DepartmentId;
+            FirstName = src.FirstName;
+            LastName = src.LastName;
+            JobTitle = src.JobTitle;
+            Address = src.Address;
+            DepartmentId = src.DepartmentId;
         }
 
 

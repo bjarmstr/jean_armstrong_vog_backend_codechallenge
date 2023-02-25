@@ -19,7 +19,7 @@ namespace VogCodeChallenge.API.Restful.Controllers
         }
 
         /// <summary>
-        /// 
+        /// List of all Employees
         /// </summary>
         /// <returns></returns>
         [HttpGet("")]
@@ -27,13 +27,14 @@ namespace VogCodeChallenge.API.Restful.Controllers
         public ActionResult<List<EmployeeResponse_v1_0>> GetEmployees()
         {
            
-            var results = _employeeService.GetAll();
+            var results = _employeeService.GetAllEmployees();
             var response = results.Select(emp => new EmployeeResponse_v1_0(emp)).ToList();
 
             return response;
         }
 
 
-       
+
+
     }
 }
