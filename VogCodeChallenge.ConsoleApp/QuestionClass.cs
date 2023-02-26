@@ -17,11 +17,11 @@ namespace VogCodeChallenge.ConsoleApp
 
         public static List<string>  NamesToAllCaps()
         {
-            var test = NamesList;
-              
-
-            return test;
+            var names = new List<string>();
+            NamesList.ForEach(name => names.Add(name.ToUpper()));
+            return names;
         }
+
 
     }
 }
