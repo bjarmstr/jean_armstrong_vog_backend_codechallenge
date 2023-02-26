@@ -15,7 +15,8 @@ namespace VogCodeChallenge.Test
         //E. any string values convert to UpperCase
         [InlineData("myString", "MYSTRING")]
         //F. anything else return the input value
-        [InlineData(2.03, 2.03)]
+        [InlineData(true, true)]
+        [InlineData('a', 'a')]
         public void SumOddNumbers_ReturnsSimillarValueType_WhenCalled(dynamic value1, dynamic expected)
         {
             var result = SWITCHModules.SWITCHModule(value1);
