@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  vogcodechallenge.api.restful:
+    image: ${DOCKER_REGISTRY-}vogcodechallengeapirestful
+    build:
+      context: .
+      dockerfile: VogCodeChallenge.API/src/VogCodeChallenge.API.Restful/Dockerfile
+    environment:
+          - ASPNETCORE_ENVIRONMENT=Development
+          - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+          - "35500:80"
+          - "35501:443"
+    volumes:
+          - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+          - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
