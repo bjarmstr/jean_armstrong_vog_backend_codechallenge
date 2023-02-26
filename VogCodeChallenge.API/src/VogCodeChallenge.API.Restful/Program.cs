@@ -33,7 +33,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+//localization
+var supportedCultures = new[] { "en-US", "fr" };
+var localizationOptions =
+    new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
+app.UseRequestLocalization(localizationOptions);
+
+
 app.UseMiddleware<GlobalExceptionHandler>();
+
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

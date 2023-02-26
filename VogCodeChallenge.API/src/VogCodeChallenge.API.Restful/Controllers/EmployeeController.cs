@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using VogCodeChallenge.API.Application.IServices;
 using VogCodeChallenge.API.Domain.Entity;
 using VogCodeChallenge.API.Restful.ViewModels.Employee.v1_0.Response;
+using VogCodeChallenge.Shared;
+
 
 namespace VogCodeChallenge.API.Restful.Controllers
 {
@@ -12,10 +15,12 @@ namespace VogCodeChallenge.API.Restful.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
+        //IStringLocalizer<ResourceShared> _localizer;
 
-        public EmployeeController(IEmployeeService employeeService)
+        public EmployeeController(IEmployeeService employeeService, )
         {
             _employeeService = employeeService;
+  
         }
 
         /// <summary>
