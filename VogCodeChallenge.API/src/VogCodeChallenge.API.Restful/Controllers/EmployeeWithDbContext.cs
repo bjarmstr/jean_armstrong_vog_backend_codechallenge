@@ -76,5 +76,67 @@ namespace VogCodeChallenge.API.Restful.Controllers
             return Ok(response);
         }
 
+
+        /// <summary>
+        /// Seed Data
+        /// </summary>
+        [HttpPut("department/{departmentId}")]
+        [MapToApiVersion("1.0")]
+        public async Task<ActionResult<string>> SeedData()
+        {
+            var department = new Department
+            {
+                Id = new Guid("8f02afbd-da06-4271-b239-f716780f59c6"),
+                Name = "Engineering",
+                Address = "Suite 123"
+            };
+            await _dbContext.Departments.AddAsync(department);
+
+            var department2 = new Department
+            {
+                Id = new Guid("dbbad7e3-13c9-45ce-9ab0-d3c39ba032d8"),
+                Name = "Engineering",
+                Address = "Suite 56"
+            };
+            await _dbContext.Departments.AddAsync(department);
+
+
+            var employee = new Employee
+            {
+                Id = Guid.NewGuid(),
+                FirstName = "Kelly",
+                LastName = "Jones",
+                JobTitle = "Engineer",
+                Address = "123 street",
+                DepartmentId = new Guid("8f02afbd-da06-4271-b239-f716780f59c6")
+            };
+            await _dbContext.Employees.AddAsync(employee);
+            
+            var employee2 = new Employee
+            {
+                Id = Guid.NewGuid(),
+                FirstName = "Suzy",
+                LastName = "Allen",
+                JobTitle = "Engineer",
+                Address = "123 street",
+                DepartmentId = new Guid("8f02afbd-da06-4271-b239-f716780f59c6")
+            }; 
+            await _dbContext.Employees.AddAsync(employee2);
+
+            var employee3 = new Employee
+            {
+                Id = Guid.NewGuid(),
+                FirstName = "Ken",
+                LastName = "Newster",
+                JobTitle = "Software Developer",
+                Address = "735 street",
+                DepartmentId = new Guid("dbbad7e3-13c9-45ce-9ab0-d3c39ba032d8")
+            };
+            await _dbContext.Employees.AddAsync(employee3);
+            await _dbContext.SaveChangesAsync().ConfigureAwait(false);
+
+            return Ok("OK");
+        }
+
     }
 }
