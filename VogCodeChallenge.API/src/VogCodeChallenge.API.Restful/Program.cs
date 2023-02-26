@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc.Versioning;
 using VogCodeChallenge.API.Application.IServices;
 using VogCodeChallenge.API.Infrastructure;
+using VogCodeChallenge.API.Restful.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<GlobalExceptionHandler>();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
