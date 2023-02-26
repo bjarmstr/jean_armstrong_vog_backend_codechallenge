@@ -17,9 +17,9 @@ namespace VogCodeChallenge.ConsoleApp
 
         public static List<string>  NamesToAllCaps()
         {
-            var names = new List<string>();
-            NamesList.ForEach(name => names.Add(name.ToUpper()));
-            return names;
+            var namesAllCaps = new List<string>();
+            NamesList.ForEach(name => namesAllCaps.Add(name.ToUpper()));
+            return namesAllCaps;
         }
 
 
