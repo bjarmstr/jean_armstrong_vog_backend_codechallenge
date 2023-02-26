@@ -14,7 +14,7 @@ using VogCodeChallenge.Shared;
 namespace VogCodeChallenge.API.Restful.Controllers
 {
     [ApiController]
-    [Route("api/employees")]
+    [Route("api/employee/v1.0")]
     [ApiVersion("1.0")]
     public class EmployeeController : ControllerBase
     {

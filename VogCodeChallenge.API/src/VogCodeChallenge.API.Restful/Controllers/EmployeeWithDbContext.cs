@@ -1,16 +1,18 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using VogCodeChallenge.API.Application.DTOs.Employees;
 using VogCodeChallenge.API.Application.IServices;
 using VogCodeChallenge.API.Domain.Entity;
 using VogCodeChallenge.API.Infrastructure.Persistence;
 using VogCodeChallenge.API.Restful.ViewModels.Employee.v1_0.Request;
 using VogCodeChallenge.API.Restful.ViewModels.Employee.v1_0.Response;
+using VogCodeChallenge.Shared.Exceptions;
 
 namespace VogCodeChallenge.API.Restful.Controllers
 {
     [ApiController]
-    [Route("api/employees2")]
+    [Route("api/employees")]
     [ApiVersion("1.0")]
     public class Employee2Controller : ControllerBase
     {
@@ -38,6 +40,25 @@ namespace VogCodeChallenge.API.Restful.Controllers
             return response;
         }
 
+        /// <summary>
+        /// List of all Employees in a Department
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("department/{departmentId}")]
+        [MapToApiVersion("1.0")]
+        public ActionResult<List<EmployeeResponse_v1_0>> GetEmployeesInDepartment([FromRoute] Guid departmentId)
+        {
+
+            if (_dbContext.Departments.Where(d => d.Id == departmentId).Count() == 0)
+            {
+                throw new NotFoundException("Department Not Found");
+            }
+            var results = _dbContext.Employees.Where(emp => emp.DepartmentId == departmentId)
+                                   .Select(emp => new EmployeeDTO(emp)).ToList();
+            var response = results.Select(emp => new EmployeeResponse_v1_0(emp)).ToList();
+
+            return response;
+        }
 
 
         /// <summary>
@@ -80,7 +101,7 @@ namespace VogCodeChallenge.API.Restful.Controllers
         /// <summary>
         /// Seed Data
         /// </summary>
-        [HttpPut("department/{departmentId}")]
+        [HttpPost("seedData")]
         [MapToApiVersion("1.0")]
         public async Task<ActionResult<string>> SeedData()
         {
