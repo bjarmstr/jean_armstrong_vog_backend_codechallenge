@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using System.Net;
 using VogCodeChallenge.API.Application.DTOs.Employees;
 using VogCodeChallenge.API.Application.IServices;
@@ -7,6 +8,8 @@ using VogCodeChallenge.API.Domain.Entity;
 using VogCodeChallenge.API.Infrastructure.Persistence;
 using VogCodeChallenge.API.Restful.ViewModels.Employee.v1_0.Request;
 using VogCodeChallenge.API.Restful.ViewModels.Employee.v1_0.Response;
+using VogCodeChallenge.Shared;
+
 
 namespace VogCodeChallenge.API.Restful.Controllers
 {
@@ -17,6 +20,7 @@ namespace VogCodeChallenge.API.Restful.Controllers
     {
         private readonly IEmployeeService _employeeService;
         private readonly ApplicationDbContext _dbContext;
+        //IStringLocalizer<ResourceShared> _localizer;
 
         public EmployeeController(IEmployeeService employeeService, ApplicationDbContext dbContext)
         {

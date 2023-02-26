@@ -4,16 +4,22 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>b79e3000-1019-4ade-bcbc-66251941ed73</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\VogCodeChallenge.API.Application\VogCodeChallenge.API.Application.csproj" />
     <ProjectReference Include="..\VogCodeChallenge.API.Infrastructure\VogCodeChallenge.API.Infrastructure.csproj" />
+    <ProjectReference Include="..\VogCodeChallenge.Shared\VogCodeChallenge.Shared.csproj" />
   </ItemGroup>
 
 </Project>

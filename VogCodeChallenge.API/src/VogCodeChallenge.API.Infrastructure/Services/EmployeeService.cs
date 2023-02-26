@@ -2,7 +2,7 @@
 using VogCodeChallenge.API.Application.DTOs.Employees;
 using VogCodeChallenge.API.Application.IServices;
 using VogCodeChallenge.API.Domain.Entity;
-using static System.Formats.Asn1.AsnWriter;
+using VogCodeChallenge.Shared.Exceptions;
 
 namespace VogCodeChallenge.API.Infrastructure.Services
 {
@@ -87,8 +87,13 @@ namespace VogCodeChallenge.API.Infrastructure.Services
         public IEnumerable<EmployeeDTO> GetEmployeesInDepartment(Guid departmentId)
         {
 
+           
+            if (Departments.Where(d => d.Id == departmentId).Count() == 0)
+            {
+                throw new NotFoundException("Department Id Not Found");
+            }
             var response = Employees.Where(emp => emp.DepartmentId == departmentId)
-                                    .Select(emp => new EmployeeDTO(emp)).ToList();
+                                   .Select(emp => new EmployeeDTO(emp)).ToList();
             return response;
         }
 

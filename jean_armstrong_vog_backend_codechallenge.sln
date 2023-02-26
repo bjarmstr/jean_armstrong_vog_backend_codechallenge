@@ -13,6 +13,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.API.Domain
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.API.Infrastructure", "VogCodeChallenge.API\src\VogCodeChallenge.API.Infrastructure\VogCodeChallenge.API.Infrastructure.csproj", "{3506C70E-FE0A-44DF-A56E-973317413558}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{BA90ADD4-0058-4096-A96F-F975B90D8F49}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.ConsoleApp", "VogCodeChallenge.ConsoleApp\VogCodeChallenge.ConsoleApp.csproj", "{F5252889-B70A-42F8-A88A-DFD37EFD7590}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.Test", "VogCodeChallenge.Test\VogCodeChallenge.Test.csproj", "{2524C319-49AC-49D2-BB9F-117F1534EBA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{48A67B30-5479-4AA3-B134-1DAA9764FD6A}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VogCodeChallenge.Shared", "VogCodeChallenge.API\src\VogCodeChallenge.Shared\VogCodeChallenge.Shared.csproj", "{BE1FE31F-CF8E-4195-8792-B7CF59421523}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +48,22 @@ Global
 		{3506C70E-FE0A-44DF-A56E-973317413558}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3506C70E-FE0A-44DF-A56E-973317413558}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3506C70E-FE0A-44DF-A56E-973317413558}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA90ADD4-0058-4096-A96F-F975B90D8F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA90ADD4-0058-4096-A96F-F975B90D8F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA90ADD4-0058-4096-A96F-F975B90D8F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA90ADD4-0058-4096-A96F-F975B90D8F49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5252889-B70A-42F8-A88A-DFD37EFD7590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5252889-B70A-42F8-A88A-DFD37EFD7590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5252889-B70A-42F8-A88A-DFD37EFD7590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5252889-B70A-42F8-A88A-DFD37EFD7590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2524C319-49AC-49D2-BB9F-117F1534EBA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2524C319-49AC-49D2-BB9F-117F1534EBA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2524C319-49AC-49D2-BB9F-117F1534EBA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2524C319-49AC-49D2-BB9F-117F1534EBA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE1FE31F-CF8E-4195-8792-B7CF59421523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE1FE31F-CF8E-4195-8792-B7CF59421523}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE1FE31F-CF8E-4195-8792-B7CF59421523}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE1FE31F-CF8E-4195-8792-B7CF59421523}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +73,7 @@ Global
 		{428E8FDA-0756-4031-ABB5-7DC86DA6548B} = {B3DB3E9C-ADFC-4627-B471-D8DA3A70A47A}
 		{5B5C22DE-F22A-4772-B84B-BC848F9073C2} = {B3DB3E9C-ADFC-4627-B471-D8DA3A70A47A}
 		{3506C70E-FE0A-44DF-A56E-973317413558} = {B3DB3E9C-ADFC-4627-B471-D8DA3A70A47A}
+		{BE1FE31F-CF8E-4195-8792-B7CF59421523} = {B3DB3E9C-ADFC-4627-B471-D8DA3A70A47A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {34AB8671-1F24-4D10-AE8A-FCC427AD839B}

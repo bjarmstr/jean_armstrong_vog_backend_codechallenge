@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VogCodeChallenge.API.Application\VogCodeChallenge.API.Application.csproj" />
+    <ProjectReference Include="..\VogCodeChallenge.Shared\VogCodeChallenge.Shared.csproj" />
   </ItemGroup>
 
 </Project>
