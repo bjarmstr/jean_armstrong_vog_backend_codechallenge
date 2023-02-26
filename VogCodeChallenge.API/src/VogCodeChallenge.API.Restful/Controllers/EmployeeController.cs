@@ -54,32 +54,6 @@ namespace VogCodeChallenge.API.Restful.Controllers
             return response;
         }
 
-        /// <summary>
-        /// Add an Employee
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost("")]
-        [MapToApiVersion("1.0")]
-        public async Task<ActionResult<List<EmployeeResponse_v1_0>>> CreateEmployee([FromBody] CreateEmployeeRequest_v1_0 data)
-        {
-
-            var employee = new Employee
-            {
-                FirstName = data.FirstName,
-                LastName = data.LastName,
-                JobTitle = data.JobTitle,
-                Address = data.Address,
-                DepartmentId = data.DepartmentId
-            };
-
-            await _dbContext.Employees.AddAsync(employee);
-
-            var results = _employeeService.GetAllEmployees();
-            var response = results.Select(emp => new EmployeeResponse_v1_0(emp)).ToList();
-
-            return response;
-        }
-
-
+    
     }
 }

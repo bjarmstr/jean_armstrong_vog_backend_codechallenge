@@ -33,12 +33,12 @@ namespace VogCodeChallenge.API.Restful.Controllers
         {
 
             var results = _dbContext.Employees.Select(emp => new Application.DTOs.Employees.EmployeeDTO(emp)).ToList();
-           
+
             var response = results.Select(emp => new EmployeeResponse_v1_0(emp)).ToList();
             return response;
         }
 
- 
+
 
         /// <summary>
         /// Add an Employee
@@ -46,24 +46,34 @@ namespace VogCodeChallenge.API.Restful.Controllers
         /// <returns></returns>
         [HttpPost("")]
         [MapToApiVersion("1.0")]
-        public async Task<ActionResult<string>> CreateEmployee([FromBody] CreateEmployeeRequest_v1_0 data)
+        public async Task<ActionResult<EmployeeResponse_v1_0>> CreateEmployee([FromBody] CreateEmployeeRequest_v1_0 data)
         {
+            
+                var employee = new Employee
+                {
+                    Id = Guid.NewGuid(),
+                    FirstName = data.FirstName,
+                    LastName = data.LastName,
+                    JobTitle = data.JobTitle,
+                    Address = data.Address,
+                    DepartmentId = data.DepartmentId
+                };
 
-            var employee = new Employee
-            {
-                FirstName = data.FirstName,
-                LastName = data.LastName,
-                JobTitle = data.JobTitle,
-                Address = data.Address,
-                DepartmentId = data.DepartmentId
-            };
+                await _dbContext.Employees.AddAsync(employee);
+                await _dbContext.SaveChangesAsync().ConfigureAwait(false);
 
-            await _dbContext.Employees.AddAsync(employee);
-            await _dbContext.SaveChangesAsync().ConfigureAwait(false);
+                var response = new EmployeeResponse_v1_0
+                {
+                    Id = employee.Id,
+                    FirstName = employee.FirstName,
+                    LastName = employee.LastName,
+                    JobTitle = employee.JobTitle,
+                    Address = employee.Address,
+                    DepartmentId = employee.DepartmentId,
+                };
+        
 
-
-
-            return "k";
+            return Ok(response);
         }
 
     }
