@@ -17,7 +17,7 @@ namespace VogCodeChallenge.API.Restful.Controllers
         private readonly IEmployeeService _employeeService;
         //IStringLocalizer<ResourceShared> _localizer;
 
-        public EmployeeController(IEmployeeService employeeService, )
+        public EmployeeController(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
   
