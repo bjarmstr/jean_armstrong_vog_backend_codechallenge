@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.EntityFrameworkCore;
 using VogCodeChallenge.API.Application.IServices;
 using VogCodeChallenge.API.Infrastructure;
+using VogCodeChallenge.API.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,10 @@ builder.Services.AddApiVersioning(opt =>
     opt.ApiVersionReader = ApiVersionReader.Combine(new UrlSegmentApiVersionReader(),
                                                     new HeaderApiVersionReader("x-api-version"),
                                                     new MediaTypeApiVersionReader("x-api-version"));
+});
+
+builder.Services.AddDbContext<ApplicationDbContext>(options => {
+    options.UseInMemoryDatabase(databaseName: "RetroGaming");
 });
 
 var app = builder.Build();

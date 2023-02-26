@@ -16,8 +16,4 @@
     <ProjectReference Include="..\VogCodeChallenge.API.Infrastructure\VogCodeChallenge.API.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\Employee\v1_0\Request\" />
-  </ItemGroup>
-
 </Project>

@@ -1,28 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using VogCodeChallenge.API.Application.DTOs.Employees;
-
-namespace VogCodeChallenge.API.Restful.ViewModels.Employee.v1_0.Response
+﻿namespace VogCodeChallenge.API.Restful.ViewModels.Employee.v1_0.Request
 {
-    public class EmployeeResponse_v1_0
+    public class CreateEmployeeRequest_v1_0
     {
-
-        public EmployeeResponse_v1_0() { }
-
-        public EmployeeResponse_v1_0(EmployeeDTO src)
-        {
-            Id = src.Id;
-            FirstName= src.FirstName;
-            LastName= src.LastName;
-            JobTitle= src.JobTitle;
-            Address= src.Address;
-            DepartmentId= src.DepartmentId;
-        }
-
-       
-        /// <summary>
-        /// Employee Unique Identifier
-        /// </summary>
-        public Guid Id { get; set; }
 
         /// <summary>
         /// First Name of Employee
@@ -48,6 +27,5 @@ namespace VogCodeChallenge.API.Restful.ViewModels.Employee.v1_0.Response
         /// Department that employee is assigned to
         /// </summary>
         public Guid DepartmentId { get; set; }
-
     }
 }
